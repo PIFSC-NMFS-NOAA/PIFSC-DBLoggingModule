@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="DB_LOG_PKG" directorySegmentName="seg_0" id="3A8DCB4E-35BD-DCC4-E85C-430CB7AE07A3">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_PKG</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:05 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<owner>8E0DBF53-EA13-B6E3-CA55-E10D82BA6BAD</owner>
+<source>CREATE OR REPLACE PACKAGE PICDM.DB_LOG_PKG&lt;br/&gt;AS&lt;br/&gt;&lt;br/&gt;--procedure to add a database log entry into the database with the specific parameters in an autonomous transaction:&lt;br/&gt;procedure ADD_LOG_ENTRY (p_entry_type_code IN VARCHAR2, p_log_source IN VARCHAR2, p_entry_content IN CLOB, p_proc_return_code OUT PLS_INTEGER);&lt;br/&gt;&lt;br/&gt;END DB_LOG_PKG;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="DB_LOG_PKG" id="3A8DCB4E-35BD-DCC4-E85C-430CB7AE07A3">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_PKG</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:05 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<owner>8E0DBF53-EA13-B6E3-CA55-E10D82BA6BAD</owner>
+<source>CREATE OR REPLACE PACKAGE BODY PICDM.DB_LOG_PKG&lt;br/&gt;AS&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;    --procedure to add a database log entry into the database with the specific parameters in an autonomous transaction:&lt;br/&gt;    PROCEDURE ADD_LOG_ENTRY (p_entry_type_code IN VARCHAR2, p_log_source IN VARCHAR2, p_entry_content IN CLOB, p_proc_return_code OUT PLS_INTEGER) IS&lt;br/&gt;        &lt;br/&gt;        --procedure variable to store the return codes from each procedure call to determine the results of the procedure execution&lt;br/&gt;        v_proc_return_code PLS_INTEGER;&lt;br/&gt;&lt;br/&gt;        --DECLARE THIS AS AN AUTONOMOUS TRANSACTION:&lt;br/&gt;        PRAGMA AUTONOMOUS_TRANSACTION;&lt;br/&gt;&lt;br/&gt;    BEGIN&lt;br/&gt;&lt;br/&gt;        DBMS_OUTPUT.PUT_LINE(&apos;Running ADD_LOG_ENTRY(&apos;||p_entry_type_code||&apos;, &apos;||p_log_source||&apos;, &apos;||p_entry_content||&apos;, &apos;||p_proc_return_code||&apos;)&apos;);&lt;br/&gt;&lt;br/&gt;        --insert the db_log_entries record based on the procedure parameters:&lt;br/&gt;        INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper(p_entry_type_code)), p_log_source, p_entry_content, SYSDATE);&lt;br/&gt;&lt;br/&gt;        --commit the DB log entry independent of any ongoing transaction&lt;br/&gt;        COMMIT;&lt;br/&gt;&lt;br/&gt;        --define the return code that indicates that the database log entry was successfully added to the database:&lt;br/&gt;        p_proc_return_code := 1;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;    EXCEPTION&lt;br/&gt;&lt;br/&gt;        --catch all PL/SQL database exceptions:&lt;br/&gt;        WHEN OTHERS THEN&lt;br/&gt;            --catch all other errors:&lt;br/&gt;&lt;br/&gt;            --print out error message:&lt;br/&gt;            DBMS_OUTPUT.PUT_LINE(&apos;The error code is &apos; || SQLCODE || &apos;- &apos; || SQLERRM);&lt;br/&gt;&lt;br/&gt;            --define the return code that indicates that the database log entry was not successfully added to the database:&lt;br/&gt;            p_proc_return_code := 0;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;    END ADD_LOG_ENTRY;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;end DB_LOG_PKG;</source>
+</body>
+</PackageOracle>

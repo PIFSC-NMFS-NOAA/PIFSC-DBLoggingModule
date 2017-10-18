@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="DB_LOG_ENTRIES" directorySegmentName="seg_0" id="D05F34C4-6544-26E5-F847-D794968ECB64">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>95908C62-3572-C4AF-2F67-7894A09097CC</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CREATED_BY" id="5607FDD0-2790-6135-54F0-3D4576939394">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOG_ENTRY_ID" id="658F2B7F-D68A-10A9-3393-7B8372750E80">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_CONTENT" id="7A5E7046-7CA5-5DF6-5263-833ECCA4C7C2">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_DTM" id="97C8229A-940F-27A4-F4AC-526F8A1B3B2F">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_TYPE_ID" id="D1435F6C-34CD-4587-C166-A95EED3C9F16">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOG_SOURCE" id="E3C6D7AC-76CD-7C26-93D9-B9420A1D4CAB">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DB_LOG_ENTRIES_PK" id="AF6198C2-287D-3BEC-CE68-23D65B1AC287">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DB_LOG_ENTRIES_I1" id="BFCAADB9-61B8-D382-8E74-995E9BD14CFB">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DB_LOG_ENTRIES_FK1" id="9ACFC9D4-5914-A55F-8881-F89DF03DBE27">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:03 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<lobStorages>
+<LobStorage class="oracle.dbtools.crest.model.design.storage.oracle.v11g.LobStorageOraclev11g" name="SYS_LOB0000646302C00004$$" id="64DBDB55-2EC8-22A3-EC2E-8E3241119414">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:03 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<cache>NOCACHE</cache>
+<chunk>8192</chunk>
+<column>ENTRY_CONTENT</column>
+<logging>YES</logging>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</LobStorage>
+</lobStorages>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DB_LOG_ENTRIES_PK" id="C2147C82-6740-6511-5DFB-08E0FFD8AC24">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<existingIndex>AF6198C2-287D-3BEC-CE68-23D65B1AC287</existingIndex>
+<indexSegment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

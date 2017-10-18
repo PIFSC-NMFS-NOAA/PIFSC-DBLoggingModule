@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D05F34C4-6544-26E5-F847-D794968ECB64" schemaObject="E37A9650-6EFB-A1B1-E27F-D68760ADE9D4" name="DB_LOG_ENTRIES">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>Database Log Entries&lt;br/&gt;&lt;br/&gt;This table stores log entries for a given module to enable debugging, logging errors, etc.  This table is used in the Database Logging Module (DLM)</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LOG_ENTRY_ID" id="658F2B7F-D68A-10A9-3393-7B8372750E80">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>LOG_ENTRY_ID</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>Primary Key for the DB_LOG_ENTRIES table</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTRY_TYPE_ID" id="D1435F6C-34CD-4587-C166-A95EED3C9F16">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>ENTRY_TYPE_ID</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>Foreign key reference to the DB_ENTRY_TYPES table that defines the type of database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BFCF6894-7C82-6273-119A-401FF8D863E0" referredColumn="13736F2D-0CDB-0366-5675-0461553F6735"/>
+</associations>
+</Column>
+<Column name="LOG_SOURCE" id="E3C6D7AC-76CD-7C26-93D9-B9420A1D4CAB">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>LOG_SOURCE</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>The application/module/script that produced the database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTRY_CONTENT" id="7A5E7046-7CA5-5DF6-5263-833ECCA4C7C2">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>ENTRY_CONTENT</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>The content of the database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTRY_DTM" id="97C8229A-940F-27A4-F4AC-526F8A1B3B2F">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>ENTRY_DTM</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>The date/time the database log entry was made</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="5607FDD0-2790-6135-54F0-3D4576939394">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<commentInRDBMS>The Oracle username of the person creating this record in the database</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C2147C82-6740-6511-5DFB-08E0FFD8AC24" name="DB_LOG_ENTRIES_PK">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES_PK</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="658F2B7F-D68A-10A9-3393-7B8372750E80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BFCAADB9-61B8-D382-8E74-995E9BD14CFB" schemaObject="E37A9650-6EFB-A1B1-E27F-D68760ADE9D4" name="DB_LOG_ENTRIES_I1">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES_I1</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1435F6C-34CD-4587-C166-A95EED3C9F16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AF6198C2-287D-3BEC-CE68-23D65B1AC287" schemaObject="E37A9650-6EFB-A1B1-E27F-D68760ADE9D4" name="DB_LOG_ENTRIES_PK">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES_PK</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="658F2B7F-D68A-10A9-3393-7B8372750E80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9ACFC9D4-5914-A55F-8881-F89DF03DBE27" name="DB_LOG_ENTRIES_FK1">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:03 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1435F6C-34CD-4587-C166-A95EED3C9F16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

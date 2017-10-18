@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="DSC" directorySegmentName="seg_0" id="B76BD882-A769-52D0-AF8C-6C24CAB9DD6C">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DSC</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<emUniformSize>0</emUniformSize>
+<extentManagement>LOCAL</extentManagement>
+</TableSpaceOraclev10g>

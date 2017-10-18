@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="DB_LOG_ENTRY_TYPES_AUTO_BRI" directorySegmentName="seg_0" id="052A6FF0-279F-E29B-8E71-4D96C473D15F">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRY_TYPES_AUTO_BRI</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<actions>INSERT</actions>
+<body>begin&lt;br/&gt;  select DB_LOG_ENTRY_TYPES_SEQ.nextval into :new.ENTRY_TYPE_ID from dual;&lt;br/&gt;  :NEW.CREATE_DATE := SYSDATE;&lt;br/&gt;  :NEW.CREATED_BY := nvl(v(&apos;APP_USER&apos;),user);&lt;br/&gt;end;&lt;br/&gt;</body>
+<triggerTime>BEFORE</triggerTime>
+<owner>8E0DBF53-EA13-B6E3-CA55-E10D82BA6BAD</owner>
+<table>3C092A1D-53AA-2440-84F8-510622D5B007</table>
+</TriggerOraclev10g>

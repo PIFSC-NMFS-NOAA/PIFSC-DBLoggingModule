@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BFCF6894-7C82-6273-119A-401FF8D863E0" containerWithKeyObject="D05F34C4-6544-26E5-F847-D794968ECB64" localFKIndex="9ACFC9D4-5914-A55F-8881-F89DF03DBE27" name="DB_LOG_ENTRIES_FK1">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES_FK1</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:03 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<referredTableLongName>PICDM.DB_LOG_ENTRY_TYPES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3C092A1D-53AA-2440-84F8-510622D5B007</referredTableID>
+<keyObject>E426BC73-0B4A-9236-B9F7-2217983AEC44</keyObject>
+<referredKeyID>E426BC73-0B4A-9236-B9F7-2217983AEC44</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ENTRY_TYPE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

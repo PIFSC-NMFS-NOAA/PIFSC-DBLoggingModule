@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="DB_LOG_ENTRY_TYPES" directorySegmentName="seg_0" id="3C092A1D-53AA-2440-84F8-510622D5B007">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>95908C62-3572-C4AF-2F67-7894A09097CC</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ENTRY_TYPE_ID" id="13736F2D-0CDB-0366-5675-0461553F6735">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_TYPE_DESC" id="202EBD6D-D87F-7AF2-FB79-76E8F8C8C678">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_MOD_BY" id="2864280E-C63F-54AC-3311-8BEB1A5B0C32">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATE_DATE" id="6FBEF5ED-082D-9668-0C49-BFE12766C670">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_TYPE_NAME" id="78BB24F3-7822-29F0-EE14-8E274C66E1E8">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_BY" id="8F7D7530-FD1A-EFD7-D7A4-CA54BB0CE1FF">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENTRY_TYPE_CODE" id="BD2256DC-2659-D62E-998E-79D4D8753DF1">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LAST_MOD_DATE" id="E9417A31-29BC-443C-3E0E-1761F7FF2AC1">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:01 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DB_LOG_ENTRY_TYPES_PK" id="20B65BB8-B574-3771-E4D5-8DE64F9C91A5">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DB_LOG_ENTRY_TYPES_U1" id="2840FFAC-3981-5FED-652E-F3399A451111">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DB_LOG_ENTRY_TYPES_U2" id="44F5FA4F-7193-12FA-56CA-AAD1DA517ED5">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DB_LOG_ENTRY_TYPES_PK" id="E426BC73-0B4A-9236-B9F7-2217983AEC44">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<existingIndex>20B65BB8-B574-3771-E4D5-8DE64F9C91A5</existingIndex>
+<indexSegment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="DB_LOG_ENTRY_TYPES_U1" id="4EBF541D-734A-64DF-8075-85A3E60471CC">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<existingIndex>2840FFAC-3981-5FED-652E-F3399A451111</existingIndex>
+<indexSegment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="DB_LOG_ENTRY_TYPES_U2" id="F9CD6EE4-D997-5539-ED97-2A86EDA68156">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:02 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<segment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</segment>
+<tableSpace>B76BD882-A769-52D0-AF8C-6C24CAB9DD6C</tableSpace>
+<existingIndex>44F5FA4F-7193-12FA-56CA-AAD1DA517ED5</existingIndex>
+<indexSegment>E7C552F5-BD94-5E98-22CA-C8B534F9FC92</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

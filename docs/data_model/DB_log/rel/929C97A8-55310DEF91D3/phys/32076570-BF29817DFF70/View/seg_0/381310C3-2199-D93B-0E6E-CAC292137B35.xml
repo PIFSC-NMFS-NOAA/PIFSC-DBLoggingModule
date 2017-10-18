@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableViewProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableViewProxyOraclev10g" name="DB_LOG_ENTRIES_V" directorySegmentName="seg_0" id="381310C3-2199-D93B-0E6E-CAC292137B35">
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<ownerDesignName>DB_log</ownerDesignName>
+<schemaObject>E37A9650-6EFB-A1B1-E27F-D68760ADE9D4</schemaObject>
+</TableViewProxyOraclev10g>

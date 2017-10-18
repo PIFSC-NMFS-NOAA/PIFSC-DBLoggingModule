@@ -1,0 +1,237 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="381310C3-2199-D93B-0E6E-CAC292137B35" schemaObject="E37A9650-6EFB-A1B1-E27F-D68760ADE9D4" name="DB_LOG_ENTRIES_V">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>PICDM</sourceObjSchema>
+<sourceObjName>DB_LOG_ENTRIES_V</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>Database Log Entries (View)&lt;br/&gt;&lt;br/&gt;This query returns all log entries stored in the DB_LOG_ENTRIES table that includes the associated DB_LOG_ENTRY_TYPES information for each log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DB_LOG_ENTRIES_V&lt;br/&gt;AS &lt;br/&gt;select &lt;br/&gt;db_log_entries.LOG_ENTRY_ID,&lt;br/&gt;db_log_entry_types.ENTRY_TYPE_ID,&lt;br/&gt;db_log_entry_types.ENTRY_TYPE_CODE,&lt;br/&gt;db_log_entry_types.ENTRY_TYPE_NAME,&lt;br/&gt;db_log_entry_types.ENTRY_TYPE_DESC,&lt;br/&gt;db_log_entries.LOG_SOURCE,&lt;br/&gt;db_log_entries.ENTRY_CONTENT,&lt;br/&gt;db_log_entries.ENTRY_DTM,&lt;br/&gt;to_char(ENTRY_DTM, &apos;MM/DD/YYYY HH24:MI&apos;) format_entry_dtm,&lt;br/&gt;db_log_entries.CREATED_BY&lt;br/&gt;&lt;br/&gt;from db_log_entries&lt;br/&gt;inner join db_log_entry_types on&lt;br/&gt;db_log_entries.entry_type_id = db_log_entry_types.entry_type_id&lt;br/&gt;&lt;br/&gt;order by log_source, entry_dtm, LOG_ENTRY_ID</userDefinedSQL>
+<parsed>true</parsed>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="LOG_ENTRY_ID" id="4671EA7B-C061-6F4E-546E-3171E15CBCE7">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>LOG_ENTRY_ID</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>Primary Key for the DB_LOG_ENTRIES table</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>LOG_ENTRY_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>LOG_ENTRY_ID</headerAlias>
+<reference>false</reference>
+<referencedColumn>658F2B7F-D68A-10A9-3393-7B8372750E80</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_TYPE_ID" id="B545F6C4-F873-2A0B-4AE5-F691524F9BD0">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_TYPE_ID</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>Foreign key reference to the DB_ENTRY_TYPES table that defines the type of database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_TYPE_ID</alias>
+<dataType>VARCHAR2 (10 BYTE)</dataType>
+<headerAlias>ENTRY_TYPE_ID</headerAlias>
+<reference>false</reference>
+<referencedColumn>BD2256DC-2659-D62E-998E-79D4D8753DF1</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_TYPE_CODE" id="F5784A7B-F0A6-D8A6-0862-0E26FC5E5E7B">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_TYPE_CODE</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The alphabetic code of the given database log entry type</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_TYPE_CODE</alias>
+<dataType>VARCHAR2 (100 BYTE)</dataType>
+<headerAlias>ENTRY_TYPE_CODE</headerAlias>
+<reference>false</reference>
+<referencedColumn>78BB24F3-7822-29F0-EE14-8E274C66E1E8</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_TYPE_NAME" id="7ADBA044-937E-AB81-6183-0FF5EE49EE80">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_TYPE_NAME</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The name of the given database log entry type</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_TYPE_NAME</alias>
+<dataType>VARCHAR2 (500 BYTE)</dataType>
+<headerAlias>ENTRY_TYPE_NAME</headerAlias>
+<reference>false</reference>
+<referencedColumn>202EBD6D-D87F-7AF2-FB79-76E8F8C8C678</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_TYPE_DESC" id="848C6838-EA4B-3BEA-2CBD-6E194C3882E0">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_TYPE_DESC</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The description of the given database log entry type</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_TYPE_DESC</alias>
+<dataType>VARCHAR2 (200 BYTE)</dataType>
+<headerAlias>ENTRY_TYPE_DESC</headerAlias>
+<reference>false</reference>
+<referencedColumn>E3C6D7AC-76CD-7C26-93D9-B9420A1D4CAB</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="LOG_SOURCE" id="E1E20538-5328-64D5-1277-E54002E9BE50">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>LOG_SOURCE</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The application/module/script that produced the database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>LOG_SOURCE</alias>
+<dataType>CLOB</dataType>
+<headerAlias>LOG_SOURCE</headerAlias>
+<reference>false</reference>
+<referencedColumn>7A5E7046-7CA5-5DF6-5263-833ECCA4C7C2</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_CONTENT" id="0081E91D-5B76-8103-A4FE-AA2919381314">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_CONTENT</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The content of the database log entry</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_CONTENT</alias>
+<dataType>DATE</dataType>
+<headerAlias>ENTRY_CONTENT</headerAlias>
+<reference>false</reference>
+<referencedColumn>97C8229A-940F-27A4-F4AC-526F8A1B3B2F</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ENTRY_DTM" id="1990EB58-1065-261B-C0B5-54ADB1DFC8A2">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>ENTRY_DTM</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The date/time the database log entry was made</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ENTRY_DTM</alias>
+<dataType>VARCHAR2 (30 BYTE)</dataType>
+<headerAlias>ENTRY_DTM</headerAlias>
+<reference>false</reference>
+<referencedColumn>5607FDD0-2790-6135-54F0-3D4576939394</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="FORMAT_ENTRY_DTM" id="68E9ABF8-B6CB-EE61-F508-7F2CA755BF4C">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>FORMAT_ENTRY_DTM</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The formatted date/time the database log entry was made in MM/DD/YYYY HH24:MI format</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>FORMAT_ENTRY_DTM</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>FORMAT_ENTRY_DTM</headerAlias>
+<reference>false</reference>
+<referencedColumn>D1435F6C-34CD-4587-C166-A95EED3C9F16</referencedColumn>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="0BD8C4BA-C6FC-8CAF-2998-0038512D05B1">
+<sourceConnName>PICD_PICDM</sourceConnName>
+<sourceObjSchema>DB_LOG_ENTRIES_V</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>Jesse.Abdul</createdBy>
+<createdTime>2017-10-18 18:19:00 UTC</createdTime>
+<commentInRDBMS>The Oracle username of the person creating this record in the database</commentInRDBMS>
+<ownerDesignName>DB_log</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+<referencedColumn>13736F2D-0CDB-0366-5675-0461553F6735</referencedColumn>
+</viewElement>
+</viewElements>
+<usedObjects>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="658F2B7F-D68A-10A9-3393-7B8372750E80">
+<columnName>LOG_ENTRY_ID</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="BD2256DC-2659-D62E-998E-79D4D8753DF1">
+<columnName>ENTRY_TYPE_CODE</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRY_TYPES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="78BB24F3-7822-29F0-EE14-8E274C66E1E8">
+<columnName>ENTRY_TYPE_NAME</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRY_TYPES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="202EBD6D-D87F-7AF2-FB79-76E8F8C8C678">
+<columnName>ENTRY_TYPE_DESC</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRY_TYPES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="E3C6D7AC-76CD-7C26-93D9-B9420A1D4CAB">
+<columnName>LOG_SOURCE</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="7A5E7046-7CA5-5DF6-5263-833ECCA4C7C2">
+<columnName>ENTRY_CONTENT</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="97C8229A-940F-27A4-F4AC-526F8A1B3B2F">
+<columnName>ENTRY_DTM</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="5607FDD0-2790-6135-54F0-3D4576939394">
+<columnName>CREATED_BY</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="D05F34C4-6544-26E5-F847-D794968ECB64">
+<container>true</container>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="3C092A1D-53AA-2440-84F8-510622D5B007">
+<container>true</container>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRY_TYPES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="D1435F6C-34CD-4587-C166-A95EED3C9F16">
+<columnName>ENTRY_TYPE_ID</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRIES</tableName>
+</UsedObject>
+<UsedObject class="oracle.dbtools.crest.swingui.editor.viewbuilder.SQLNameHelper" id="13736F2D-0CDB-0366-5675-0461553F6735">
+<columnName>ENTRY_TYPE_ID</columnName>
+<schema>PICDM</schema>
+<tableName>DB_LOG_ENTRY_TYPES</tableName>
+</UsedObject>
+</usedObjects>
+</TableView>
