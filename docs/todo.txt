@@ -1,0 +1,5 @@
+_ Develop query logic for searching clob values in the ENTRY_CONTENT field so this can be used as a standard query and provided to developers/users
+
+_ provide the application code for constructing the CLOB variable value from a large variable in an application (e.g. PHP output_message.php class appending CLOB values using a buffer or bind variables)
+
+_ update the guidance to caution people that they need to organize their logging implementation to suit their purposes or else they may not be able to find their entries easily
