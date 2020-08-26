@@ -12,8 +12,8 @@ The Database Logging Module (DLM) was developed to provide a method to log entri
 ## Resources
 - [DLM Documentation](./docs/Database%20Logging%20Module%20Documentation.MD)
 
-## Versioning
-We use Git for versioning
+## Version Control Platform
+- Git
 
 ## Authors
 - Jesse Abdul - Initial work
