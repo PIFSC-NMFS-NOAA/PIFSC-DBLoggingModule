@@ -2,6 +2,7 @@
 
 ## Overview:
 There is a need for application-level logging for database applications for informational and debugging purposes that is independent of any ongoing SQL transactions. The Database Logging Module (DLM) was developed to provide a method to log entries in an Oracle database for any modules that utilize an Oracle database.  A view object is available for viewing log entries that can be filtered and searched for certain types of log entries or log entries with certain types of content based on SQL query logic.  The DLM has been provided to log the different types of information from a given module independent of SQL transactions performed by that module.
+
 ## Resources:
 - Database Logging Module Version Control Information:
   -	URL: git@gitlab.pifsc.gov:centralized-data-tools/database-logging-module.git
@@ -28,7 +29,7 @@ There is a need for application-level logging for database applications for info
   - DB_LOG_PKG: This package provides a single procedure ADD_LOG_ENTRY() that will insert a database log entry into the DB_LOG_ENTRIES table based on the parameters passed to the procedure.  This procedure commits the DB_LOG_ENTRIES record in an autonomous transaction that is independent of any ongoing SQL transactions in the given module's execution so even if the transaction is rolled back the database log entry will be inserted barring any database errors encountered when the log entry is inserted.
 
 ## Example Implementation:
-- When connected to a database with the DLM installed execute the commands listed in [execute DB_LOG_PKG.sql](./SQL/scripts/execute%20DB_LOG_PKG.sql)
+- When connected to a database with the DLM installed execute the commands listed in [execute DB_LOG_PKG.sql](../SQL/scripts/execute%20DB_LOG_PKG.sql)
 
 ## Best Practices:
 - When implementing the DLM on a PL/SQL procedure/function to log successful/unsuccessful actions standardize the LOG_SOURCE parameter value to include any parameters for the procedure/function call to make it easier to troubleshoot and debug the PL/SQL code.  
