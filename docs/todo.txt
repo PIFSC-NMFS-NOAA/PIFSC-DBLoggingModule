@@ -3,3 +3,6 @@ _ Develop query logic for searching clob values in the ENTRY_CONTENT field so th
 _ provide the application code for constructing the CLOB variable value from a large variable in an application (e.g. PHP output_message.php class appending CLOB values using a buffer or bind variables)
 
 _ update the guidance to caution people that they need to organize their logging implementation to suit their purposes or else they may not be able to find their entries easily
+
+
+_ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance

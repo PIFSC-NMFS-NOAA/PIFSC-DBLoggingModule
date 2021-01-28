@@ -5,16 +5,16 @@ There is a need for application-level logging for database applications for info
 
 ## Resources:
 - Database Logging Module Version Control Information:
-  -	URL: git@gitlab.pifsc.gov:centralized-data-tools/database-logging-module.git
+  -	URL: git@github.com:PIFSC-NMFS-NOAA/Database-Logging-Module.git
   - Database: 0.2 (Git tag: db_log_db_v0.2)
 -	[Database Diagram](./data_model/DB_Log_diagram.png)
 -	[Database Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
 
 ## <a name="database_setup"></a>Database Setup:
--	The [Database Version Control Module (VCM)](https://gitlab.pifsc.gov/centralized-data-tools/database-version-control-module) must be installed on the given schema before the DB Logging Module can be installed.
+-	The [Database Version Control Module (VCM)](https://github.com/PIFSC-NMFS-NOAA/Database-Version-Control-Module) must be installed on the given schema before the DB Logging Module can be installed.
   - VCM Version Control Information:
-    - URL (Git): git@gitlab.pifsc.gov:centralized-data-tools/database-version-control-module.git
-    - Application: 0.12 (Git tag: db_vers_ctrl_v0.12)
+    - URL: git@github.com:PIFSC-NMFS-NOAA/Database-Version-Control-Module.git
+    - Application: 0.15 (Git tag: db_vers_ctrl_v0.15)
     - Database: 0.2 (Git tag: db_vers_ctrl_db_v0.2)
 - [Installing or Upgrading the Database Logging Module](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
 
