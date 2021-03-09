@@ -1,7 +1,7 @@
 # Database Logging Module
 
 ## Overview
-The [Database Logging Module (DLM)](https://github.com/PIFSC-NMFS-NOAA/Database-Logging-Module) was developed to provide a method to log entries in an Oracle database for any modules that utilize an Oracle database.
+The [Database Logging Module (DLM)](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBLoggingModule) was developed to provide a method to log entries in an Oracle database for any modules that utilize an Oracle database.
 
 ## Prerequisites:
 - Oracle 11g or higher
@@ -22,4 +22,4 @@ See the [LICENSE.md](./LICENSE.md) for details
 This repository is a scientific product and is not official communication of the National Oceanic and Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by DOC or the United States Government.
 
 ## Repository Access from NOAA Website
-This repository is also available as a [compressed backup file (Database-Logging-Module.tar.gz)](https://pifsc-xfer.irc.noaa.gov/gitxfer/Database-Logging-Module.tar.gz) on a publicly accessible website maintained by the Pacific Islands Fisheries Science Center (PIFSC) of the NOAA National Marine Fisheries Service (NMFS)
+This repository is also available as a [compressed backup file (PIFSC-DBLoggingModule.tar.gz)](https://pifsc-xfer.irc.noaa.gov/gitxfer/PIFSC-DBLoggingModule.tar.gz) on a publicly accessible website maintained by the Pacific Islands Fisheries Science Center (PIFSC) of the NOAA National Marine Fisheries Service (NMFS)
