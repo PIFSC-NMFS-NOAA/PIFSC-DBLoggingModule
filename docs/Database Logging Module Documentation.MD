@@ -14,8 +14,8 @@ There is a need for application-level logging for database applications for info
 -	The [Database Version Control Module (VCM)](https://github.com/PIFSC-NMFS-NOAA/Database-Version-Control-Module) must be installed on the given schema before the DB Logging Module can be installed.
   - VCM Version Control Information:
     - URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule.git
-    - Application: 0.16 (Git tag: db_vers_ctrl_v0.16)
-    - Database: 0.2 (Git tag: db_vers_ctrl_db_v0.2)
+    - Database: 0.2 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
+    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
 - [Installing or Upgrading the Database Logging Module](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
 
 ## Database Design:
