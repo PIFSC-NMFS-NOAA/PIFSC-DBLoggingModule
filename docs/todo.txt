@@ -4,5 +4,6 @@ _ provide the application code for constructing the CLOB variable value from a l
 
 _ update the guidance to caution people that they need to organize their logging implementation to suit their purposes or else they may not be able to find their entries easily
 
+_ remove the return code parameter from the procedure (it's not necessary)
 
-_ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance
+_ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)
