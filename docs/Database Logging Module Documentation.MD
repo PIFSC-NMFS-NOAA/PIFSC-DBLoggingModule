@@ -6,7 +6,7 @@ There is a need for application-level logging for database applications for info
 ## Resources:
 - Database Logging Module Version Control Information:
   -	URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBLoggingModule.git
-  - Database: 0.2 (Git tag: db_log_db_v0.2)
+  - Database: 0.3 (Git tag: db_log_db_v0.3)
 -	[Database Diagram](./data_model/DB_Log_diagram.png)
 -	[Database Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
 
