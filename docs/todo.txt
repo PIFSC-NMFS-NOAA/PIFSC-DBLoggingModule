@@ -2,8 +2,10 @@ _ Develop query logic for searching clob values in the ENTRY_CONTENT field so th
 
 _ provide the application code for constructing the CLOB variable value from a large variable in an application (e.g. PHP output_message.php class appending CLOB values using a buffer or bind variables)
 
-_ update the guidance to caution people that they need to organize their logging implementation to suit their purposes or else they may not be able to find their entries easily
+X caution users against too much logging, this can cause the database to fill up quickly with logging messages
+	X errors should be logged and during development they can use debugging messages to help troubleshoot existing functionality and implement new functionality
 
-_ remove the return code parameter from the procedure (it's not necessary)
+X remove the return code parameter from the procedure (it's not necessary)
+	the procedure call is now overloaded based on the parameters that are supplied to allow legacy code to continue to run
 
 _ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)

@@ -32,4 +32,7 @@ There is a need for application-level logging for database applications for info
 - When connected to a database with the DLM installed execute the commands listed in [execute DB_LOG_PKG.sql](../SQL/scripts/execute%20DB_LOG_PKG.sql)
 
 ## Best Practices:
-- When implementing the DLM on a PL/SQL procedure/function to log successful/unsuccessful actions standardize the LOG_SOURCE parameter value to include any parameters for the procedure/function call to make it easier to troubleshoot and debug the PL/SQL code.  
+- When implementing the DLM on a PL/SQL procedure/function to log successful/unsuccessful actions standardize the LOG_SOURCE parameter value to include any parameters for the procedure/function call to make it easier to troubleshoot and debug the PL/SQL code.
+- Log all application/database errors so they can be used for troubleshooting purposes
+- Avoid excessive logging messages in production applications and PL/SQL code.  Since each logging message is stored in the database it can cause the DB_LOG_ENTRIES table to require a substantial amount of database tablespace.   
+  - Debugging messages should be used to facilitate the development and troubleshooting process but the DLM procedure calls should be removed or commented out before migrating to the production platform
