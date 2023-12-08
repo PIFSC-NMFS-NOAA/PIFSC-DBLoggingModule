@@ -5,17 +5,21 @@ There is a need for application-level logging for database applications for info
 
 ## Resources:
 - Database Logging Module Version Control Information:
-  -	URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBLoggingModule.git
-  - Database: 0.3 (Git tag: db_log_db_v0.3)
+  -	URL: git@github.com:pifsc-noaa/PIFSC-DBLoggingModule.git
+  - Database: 1.0 (Git tag: db_log_db_v1.0)
 -	[Database Diagram](./data_model/DB_Log_diagram.png)
 -	[Database Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
 
 ## <a name="database_setup"></a>Database Setup:
--	The [Database Version Control Module (VCM)](https://github.com/PIFSC-NMFS-NOAA/Database-Version-Control-Module) must be installed on the given schema before the DB Logging Module can be installed.
+-	The [Database Version Control Module (VCM)](https://github.com/pifsc-noaa/Database-Version-Control-Module) must be installed on the given schema before the DB Logging Module can be installed.
   - VCM Version Control Information:
-    - URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule.git
-    - Database: 0.2 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
-    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
+    - URL: git@github.com:pifsc-noaa/PIFSC-DBVersionControlModule.git
+    - Database: 1.0 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/pifsc-noaa/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
+    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/pifsc-noaa/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
+-	The [Centralized Configuration Module (CCM)](https://github.com/pifsc-noaa/Centralized-Configuration) must be installed on the given schema for the debug message filtering to work properly
+  - CC Version Control Information:
+    - URL: git@github.com:noaa-pifsc/Centralized-Configuration.git
+    - Database: 1.1 (git tag: [centralized_configuration_db_v1.1](https://github.com/pifsc-noaa/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
 - [Installing or Upgrading the Database Logging Module](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
 
 ## Database Design:
