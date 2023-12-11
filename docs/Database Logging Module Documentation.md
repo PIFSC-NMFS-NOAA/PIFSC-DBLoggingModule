@@ -28,7 +28,7 @@ There is a need for application-level logging for database applications for info
       - This will prevent debugging messages from being logged in the database
 		- (for development or test systems) OPTION_VALUE: DEBUG
 			- This will allow debugging messages from being logged in the database
-    -   \*Note: the [cc_data_generator.xlsx](https://picgitlab.nmfs.local/centralized-data-tools/centralized-configuration/-/blob/master/docs/cc_data_generator.xlsx) in the Centralized Configuration project can be used to generate DML INSERT statements to load data into the CC_CONFIG_OPTIONS table
+    -   \*Note: the [cc_data_generator.xlsx](https://github.com/noaa-pifsc/Centralized-Configuration/blob/master/docs/cc_data_generator.xlsx) in the Centralized Configuration project can be used to generate DML INSERT statements to load data into the CC_CONFIG_OPTIONS table
 
 ## Database Design:
 -	[Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
