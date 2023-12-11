@@ -5,18 +5,30 @@ There is a need for application-level logging for database applications for info
 
 ## Resources:
 - Database Logging Module Version Control Information:
-  -	URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBLoggingModule.git
-  - Database: 0.3 (Git tag: db_log_db_v0.3)
+  -	URL: git@github.com:noaa-pifsc/PIFSC-DBLoggingModule.git
+  - Database: 1.0 (Git tag: db_log_db_v1.0)
 -	[Database Diagram](./data_model/DB_Log_diagram.png)
 -	[Database Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
 
 ## <a name="database_setup"></a>Database Setup:
--	The [Database Version Control Module (VCM)](https://github.com/PIFSC-NMFS-NOAA/Database-Version-Control-Module) must be installed on the given schema before the DB Logging Module can be installed.
+-	### Install the Database Version Control Module (VCM)
   - VCM Version Control Information:
-    - URL: git@github.com:PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule.git
-    - Database: 0.2 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
-    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/PIFSC-NMFS-NOAA/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
-- [Installing or Upgrading the Database Logging Module](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
+    - URL: git@github.com:noaa-pifsc/PIFSC-DBVersionControlModule.git
+    - Database: 1.0 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
+    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
+-	### Install the Centralized Configuration Module (CCM)
+  - CCM Version Control Information:
+    - URL: git@github.com:noaa-pifsc/Centralized-Configuration.git
+    - Database: 1.1 (git tag: [centralized_configuration_db_v1.1](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
+- ### [Install the DLM](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
+- ### Load the runtime configuration options
+  - To set the DLM data system status configuration to allow or prevent debugging messages from being inserted in the database, insert a CC_CONFIG_OPTIONS record  with the following values:
+		- OPTION_NAME: DLM_SYSTEM_STATUS
+		- (for production systems) OPTION_VALUE: PROD
+      - This will prevent debugging messages from being logged in the database
+		- (for development or test systems) OPTION_VALUE: DEBUG
+			- This will allow debugging messages from being logged in the database
+    -   \*Note: the [cc_data_generator.xlsx](https://github.com/noaa-pifsc/Centralized-Configuration/blob/master/docs/cc_data_generator.xlsx) in the Centralized Configuration project can be used to generate DML INSERT statements to load data into the CC_CONFIG_OPTIONS table
 
 ## Database Design:
 -	[Naming Conventions](./Database%20Logging%20Module%20DB%20Naming%20Conventions.MD)
@@ -36,3 +48,4 @@ There is a need for application-level logging for database applications for info
 - Log all application/database errors so they can be used for troubleshooting purposes
 - Avoid excessive logging messages in production applications and PL/SQL code.  Since each logging message is stored in the database it can cause the DB_LOG_ENTRIES table to require a substantial amount of database tablespace.   
   - Debugging messages should be used to facilitate the development and troubleshooting process but the DLM procedure calls should be removed or commented out before migrating to the production platform
+  - \*Note: Debugging messages can be prevented from being logged in the database by  [loading the runtime configuration option](#load-the-runtime-configuration-options) appropriately
