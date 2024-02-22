@@ -208,7 +208,7 @@ AS
 end DB_LOG_PKG;
 /
 
-
+ALTER VIEW DB_LOG_ENTRIES_V COMPILE;
 
 --define the upgrade version in the database upgrade log table:
 INSERT INTO DB_UPGRADE_LOGS (UPGRADE_APP_NAME, UPGRADE_VERSION, UPGRADE_DATE, UPGRADE_DESC) VALUES ('Database Log', '1.0', TO_DATE('11-DEC-23', 'DD-MON-YY'), 'Updated the DB_LOG_ENTRY_TYPES table to implement case-insensitive unique indexes for the ENTRY_TYPE_CODE and ENTRY_TYPE_NAME fields.  Updated DB_LOG_PKG package to check a Centralized Configuration Module (CCM) option (OPTION_NAME: DLM_SYSTEM_STATUS) to see if the current application is in production status, if so then do not log debugging messages in the database, by default if the configuration option is not defined the package will operate in production mode to prevent any sensitive information about the PL/SQL packages or app modules from being stored in the DB.');
