@@ -14,8 +14,8 @@ There is a need for application-level logging for database applications for info
 -	### Install the Database Version Control Module (VCM)
   - VCM Version Control Information:
     - URL: git@github.com:noaa-pifsc/PIFSC-DBVersionControlModule.git
-    - Database: 1.0 (git tag: [db_vers_ctrl_db_v0.2](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
-    - Application: 1.0 (git tag: [db_vers_ctrl_v1.0](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.0))
+    - Database: 1.0 (git tag: [db_vers_ctrl_db_v1.0](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v1.0))
+    - SOP: 1.1 (git tag: [db_vers_ctrl_v1.1](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_v1.1))
 -	### Install the Centralized Configuration Module (CCM)
   - CCM Version Control Information:
     - URL: git@github.com:noaa-pifsc/Centralized-Configuration.git
