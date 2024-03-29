@@ -8,4 +8,44 @@ X caution users against too much logging, this can cause the database to fill up
 X remove the return code parameter from the procedure (it's not necessary)
 	the procedure call is now overloaded based on the parameters that are supplied to allow legacy code to continue to run
 
-_ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)
+X implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)
+
+
+
+version 1.0 testing:
+	version 1.0:
+		X TEST_JDA_COMP: run SQL/deploy_dev.sql
+		X TEST_JDA: run version 0.1, 0.2, 0.3, 1.0 upgrade files
+		X verified no invalid objects
+		verified data models are equivalent
+	Version 0.3:
+		TEST_JDA_COMP: 
+			run deploy_dev.sql
+			run rollback v1.0.sql
+		TEST_JDA: run version 0.1, 0.2, 0.3 upgrade files
+		verified no invalid objects
+		verified data models are equivalent
+	Version 0.2:
+		TEST_JDA_COMP: 
+			run deploy_dev.sql
+			run rollback v1.0.sql
+		TEST_JDA: run version 0.1, 0.2 upgrade files
+		verified no invalid objects
+		verified data models are equivalent
+	Version 0.1:
+		TEST_JDA_COMP: 
+			run deploy_dev.sql
+			run rollback v1.0.sql
+			run rollback v0.2.sql
+		TEST_JDA: run version 0.1 upgrade files
+		verified no invalid objects
+		verified data models are equivalent
+	Version 0.0:
+		TEST_JDA_COMP: 
+			run SQL/deploy_dev.sql
+			run rollback v1.0.sql
+			run rollback v0.2.sql
+			run rollback v0.1.sql
+		confirmed TEST_JDA_COMP schema has no objects
+	
+	
