@@ -13,39 +13,42 @@ X implement debug mode for DB logging module? (won't log "DEBUG" entries otherwi
 
 
 version 1.0 testing:
-	version 1.0:
+	X version 1.0:
 		X TEST_JDA_COMP: run SQL/deploy_dev.sql
 		X TEST_JDA: run version 0.1, 0.2, 0.3, 1.0 upgrade files
 		X verified no invalid objects
-		verified data models are equivalent
-	Version 0.3:
-		TEST_JDA_COMP: 
-			run deploy_dev.sql
-			run rollback v1.0.sql
-		TEST_JDA: run version 0.1, 0.2, 0.3 upgrade files
-		verified no invalid objects
-		verified data models are equivalent
-	Version 0.2:
-		TEST_JDA_COMP: 
-			run deploy_dev.sql
-			run rollback v1.0.sql
-		TEST_JDA: run version 0.1, 0.2 upgrade files
-		verified no invalid objects
-		verified data models are equivalent
-	Version 0.1:
-		TEST_JDA_COMP: 
-			run deploy_dev.sql
-			run rollback v1.0.sql
-			run rollback v0.2.sql
-		TEST_JDA: run version 0.1 upgrade files
-		verified no invalid objects
-		verified data models are equivalent
-	Version 0.0:
-		TEST_JDA_COMP: 
-			run SQL/deploy_dev.sql
-			run rollback v1.0.sql
-			run rollback v0.2.sql
-			run rollback v0.1.sql
-		confirmed TEST_JDA_COMP schema has no objects
+		X verified data models are equivalent
+	X Version 0.3:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+		X TEST_JDA: run version 0.1, 0.2, 0.3 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.2:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+		X TEST_JDA: run version 0.1, 0.2 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.1:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+			X run rollback v0.2.sql
+		X TEST_JDA: run version 0.1 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.0:
+		X TEST_JDA_COMP: 
+			X run SQL/deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+			X run rollback v0.2.sql
+			X run rollback v0.1.sql
+		X confirmed TEST_JDA_COMP schema has no objects
 	
 	
