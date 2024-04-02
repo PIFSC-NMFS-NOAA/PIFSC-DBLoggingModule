@@ -19,7 +19,7 @@ There is a need for application-level logging for database applications for info
 -	### Install the Centralized Configuration Module (CCM)
   - CCM Version Control Information:
     - URL: git@github.com:noaa-pifsc/Centralized-Configuration.git
-    - Database: 1.1 (git tag: [centralized_configuration_db_v1.1](https://github.com/noaa-pifsc/PIFSC-DBVersionControlModule/releases/tag/db_vers_ctrl_db_v0.2))
+    - Database: 1.1 (git tag: [centralized_configuration_db_v1.1](https://github.com/noaa-pifsc/Centralized-Configuration/releases/tag/centralized_configuration_db_v1.1))
 - ### [Install the DLM](./Installing%20or%20Upgrading%20the%20Database%20Logging%20Module.MD)
 - ### Load the runtime configuration options
   - To set the DLM data system status configuration to allow or prevent debugging messages from being inserted in the database, insert a CC_CONFIG_OPTIONS record  with the following values:
