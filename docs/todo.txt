@@ -8,4 +8,47 @@ X caution users against too much logging, this can cause the database to fill up
 X remove the return code parameter from the procedure (it's not necessary)
 	the procedure call is now overloaded based on the parameters that are supplied to allow legacy code to continue to run
 
-_ implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)
+X implement debug mode for DB logging module? (won't log "DEBUG" entries otherwise), this could be a flag in the DB instance (CC_CONFIG_OPTIONS)
+
+
+
+version 1.0 testing (using G:\security\DB\TEST_JDA\SQL\deploy_rollback_dev_DLM.sql):
+	X version 1.0:
+		X TEST_JDA_COMP: run SQL/deploy_dev.sql
+		X TEST_JDA: run version 0.1, 0.2, 0.3, 1.0 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.3:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+		X TEST_JDA: run version 0.1, 0.2, 0.3 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.2:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+		X TEST_JDA: run version 0.1, 0.2 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.1:
+		X TEST_JDA_COMP: 
+			X run deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+			X run rollback v0.2.sql
+		X TEST_JDA: run version 0.1 upgrade files
+		X verified no invalid objects
+		X verified data models are equivalent
+	X Version 0.0:
+		X TEST_JDA_COMP: 
+			X run SQL/deploy_dev.sql
+			X run rollback v1.0.sql
+			X run rollback v0.3.sql
+			X run rollback v0.2.sql
+			X run rollback v0.1.sql
+		X confirmed TEST_JDA_COMP schema has no objects
+	
+	

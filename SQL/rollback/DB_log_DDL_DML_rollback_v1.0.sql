@@ -7,20 +7,30 @@
 
 
 --------------------------------------------------------
---Database Log - version 1.0 updates:
+--Database Log - version 1.0 rollback:
 --------------------------------------------------------
 
 
-ALTER TABLE DB_LOG_ENTRY_TYPES
-DROP CONSTRAINT DB_LOG_ENTRY_TYPES_U1;
-
-CREATE UNIQUE INDEX DB_LOG_ENTRY_TYPES_U1 ON DB_LOG_ENTRY_TYPES (UPPER(ENTRY_TYPE_CODE) ASC);
+DROP INDEX DB_LOG_ENTRY_TYPES_U1;
 
 
 ALTER TABLE DB_LOG_ENTRY_TYPES
-DROP CONSTRAINT DB_LOG_ENTRY_TYPES_U2;
+ADD CONSTRAINT DB_LOG_ENTRY_TYPES_U1 UNIQUE
+(
+  ENTRY_TYPE_CODE
+)
+ENABLE;
 
-CREATE UNIQUE INDEX DB_LOG_ENTRY_TYPES_U2 ON DB_LOG_ENTRY_TYPES (UPPER(ENTRY_TYPE_NAME) ASC);
+
+
+DROP INDEX DB_LOG_ENTRY_TYPES_U2;
+
+ALTER TABLE DB_LOG_ENTRY_TYPES
+ADD CONSTRAINT DB_LOG_ENTRY_TYPES_U2 UNIQUE
+(
+  ENTRY_TYPE_NAME
+)
+ENABLE;
 
 
 
@@ -96,13 +106,6 @@ create or replace PACKAGE BODY DB_LOG_PKG
 --this package provides functions and procedures to interact with the database log package module
 AS
 
-		--package string variable to store the production status of the logging module, this determines if debug messages will be logged (FALSE) or not (TRUE)
-		PV_PROD_STATUS BOOLEAN;
-        
-        --package variable to store the DLM configuration for the system status
-        PV_DLM_SYSTEM_STATUS VARCHAR2(500);
-
-
 		--procedure to add a database log entry into the database with the specific parameters in an autonomous transaction:
 		--Parameter List:
 		--p_entry_type_code: this is a string that defines the type of log entry, these correspond to DB_LOG_ENTRY_TYPES.ENTRY_TYPE_CODE values
@@ -120,15 +123,12 @@ AS
 
     BEGIN
 
-		--check the production status, if it's not in production status then log the message, if it is in production status and it's not a debugging message then log the message:
-		IF ((NOT PV_PROD_STATUS) OR (PV_PROD_STATUS AND UPPER(p_entry_type_code) <> 'DEBUG')) THEN
-			--insert the db_log_entries record based on the procedure parameters:
-			INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper(p_entry_type_code)), p_log_source, p_entry_content, SYSDATE);
 
-			--commit the DB log entry independent of any ongoing transaction
-			COMMIT;
-		END IF;
-		
+        --insert the db_log_entries record based on the procedure parameters:
+        INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper(p_entry_type_code)), p_log_source, p_entry_content, SYSDATE);
+
+        --commit the DB log entry independent of any ongoing transaction
+        COMMIT;
 
         --define the return code that indicates that the database log entry was successfully added to the database:
         p_proc_return_code := 1;
@@ -175,40 +175,14 @@ AS
 						ADD_LOG_ENTRY ('ERROR', p_log_source, SQLERRM, v_proc_return_code);
 
     END ADD_LOG_ENTRY;
-	
-	--package initialization
-	BEGIN
-	
---		INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper('DEBUG')), 'DB_LOG_PKG initialization', 'running the DB_LOG_PKG initialization code', SYSDATE);
 
-
-		--check if the CC_CONFIG_OPTIONS table exists, if so attempt to retrieve the configuration variable from the DB:
-		SELECT OPTION_VALUE INTO PV_DLM_SYSTEM_STATUS FROM CC_CONFIG_OPTIONS WHERE UPPER(OPTION_NAME) = UPPER('DLM_SYSTEM_STATUS');
-		
-		--check the value of the production status configuration option value
-		IF (UPPER(PV_DLM_SYSTEM_STATUS) = 'PROD') THEN 
-			--the production configuration is enabled
-			PV_PROD_STATUS := TRUE;
-			
---			INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper('DEBUG')), 'DB_LOG_PKG initialization', 'This is a production configuration', SYSDATE);
-
-			
-		ELSE
-			--the production configuration is NOT enabled
-			PV_PROD_STATUS := FALSE;
-
---			INSERT INTO DB_LOG_ENTRIES (ENTRY_TYPE_ID, LOG_SOURCE, ENTRY_CONTENT, ENTRY_DTM) VALUES ((select entry_type_id from db_log_entry_types where upper(entry_type_code) = upper('DEBUG')), 'DB_LOG_PKG initialization', 'This is NOT a production configuration', SYSDATE);		
-		END IF;
-			
-		
-		EXCEPTION
-			WHEN OTHERS THEN
-				--the configuration table doesn't exist or the PROD_STATUS configuration value is not defined.  Default to non-production status
-				PV_PROD_STATUS := TRUE;
 end DB_LOG_PKG;
 /
 
+
 ALTER VIEW DB_LOG_ENTRIES_V COMPILE;
 
---define the upgrade version in the database upgrade log table:
-INSERT INTO DB_UPGRADE_LOGS (UPGRADE_APP_NAME, UPGRADE_VERSION, UPGRADE_DATE, UPGRADE_DESC) VALUES ('Database Log', '1.0', TO_DATE('11-DEC-23', 'DD-MON-YY'), 'Updated the DB_LOG_ENTRY_TYPES table to implement case-insensitive unique indexes for the ENTRY_TYPE_CODE and ENTRY_TYPE_NAME fields.  Updated DB_LOG_PKG package to check a Centralized Configuration Module (CCM) option (OPTION_NAME: DLM_SYSTEM_STATUS) to see if the current application is in production status, if so then do not log debugging messages in the database, by default if the configuration option is not defined the package will operate in production mode to prevent any sensitive information about the PL/SQL packages or app modules from being stored in the DB.');
+
+DELETE FROM DB_UPGRADE_LOGS WHERE UPGRADE_APP_NAME = 'Database Log' AND UPGRADE_VERSION = '1.0';
+
+COMMIT;
